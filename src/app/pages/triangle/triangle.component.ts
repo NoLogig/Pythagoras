@@ -55,20 +55,17 @@ export class TriangleComponent {
     let { adjacent, opposite, hypotenuse } = triRight;
 
     if (!adjacent) {
-      //      _______
-      // a = √c² - b²
+      // a = √(c² - b²)
       adjacent = Math.sqrt((hypotenuse ** 2) - (opposite ** 2));
       return { adjacent, opposite, hypotenuse };
     }
 
     if (!opposite) {
-      //      _______
-      // b = √c² - a²
+      // b = √(c² - a²)
       opposite = Math.sqrt((hypotenuse ** 2) - (adjacent ** 2));
       return { adjacent, opposite, hypotenuse };
     }
-    //      _______
-    // c = √a² + b²
+    // c = √(a² + b²)
     hypotenuse = Math.sqrt((adjacent ** 2) + (opposite ** 2));
     return { adjacent, opposite, hypotenuse };
   }
