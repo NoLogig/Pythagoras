@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IRightTriangle, IPythagorasTriangle } from 'src/app/interfaces/triangle';
+import { IRightTriangle, IPythagorasTriangle } from 'interfaces/triangle';
 
 type IPythagorasRightTri = { ankathete: number, gegenkathete: undefined, hypothenuse: number }
     | { ankathete: undefined, gegenkathete: number, hypothenuse: number }
