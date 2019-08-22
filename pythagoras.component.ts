@@ -1,15 +1,24 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IRightTriangle, IPythagorasTriangle } from 'interfaces/triangle';
 
 type IPythagorasRightTri = { ankathete: number, gegenkathete: undefined, hypothenuse: number }
     | { ankathete: undefined, gegenkathete: number, hypothenuse: number }
     | { ankathete: number, gegenkathete: number, hypothenuse: undefined };
 
-interface IRightTri {
-    ankathete: number;
-    gegenkathete: number;
-    hypothenuse: number;
+interface ITriangle {
+  sine: () => {};
+  cosine: () => {};
+  tangent: () => {};
 }
+
+interface IRightTriangle {
+  adjacent: number;
+  opposite: number;
+  hypotenuse: number;
+}
+
+type IPythagorasTriangle = { adjacent: number, opposite: undefined, hypotenuse: number }
+                              | { adjacent: undefined, opposite: number, hypotenuse: number }
+                              | { adjacent: number, opposite: number, hypotenuse: undefined };
 
 // Speeds rad/deg converters performance in iterations up
 const DEG = Math.PI / 180;
@@ -22,6 +31,7 @@ const FULL_ARC = Math.PI * 2;
   styleUrls: ['./triangle.component.scss']
 })
 export class TriangleComponent {
+  
   public rightTriShape: IPythagorasRightTri = {
     ankathete: undefined,
     gegenkathete: 20,
